@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Reviews | Saint Mercy</title>
+    <style>
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(30px) saturate(180%);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            padding: 40px;
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .review-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 204, 0.1);
+        }
+
+        .review-img {
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.5s ease;
+        }
+
+        .review-card:hover .review-img {
+            transform: scale(1.05);
+        }
+
+        .star-rating {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+        }
+
+        .review-text {
+            font-style: italic;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            opacity: 0.9;
+        }
+
+        .client-name {
+            font-weight: 700;
+            color: #fff;
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        .client-info {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .intro-glass-card {
+            background: rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(40px) saturate(200%);
+            -webkit-backdrop-filter: blur(40px) saturate(200%);
+            padding: 80px 40px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            margin-bottom: 100px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+            border-bottom: 2px solid rgba(0, 255, 204, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header>
+            <div class="container nav-container">
+                <nav>
+                    <a href="index.html" class="logo gradient-text">Saint Mercy</a>
+                    <ul class="nav-links">
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#portfolio">Work</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="reviews.html" class="active">Reviews</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Animated Background -->
+        <div class="hero-bg" style="height: 100vh; position: fixed; width: 100%; top: 0; left: 0;">
+            <div class="grain-overlay"></div>
+            <div class="hero-blob blob-1"></div>
+            <div class="hero-blob blob-2"></div>
+            <div class="hero-blob blob-3"></div>
+            <div class="hero-blob blob-4"></div>
+        </div>
+
+        <main class="container" style="position: relative; z-index: 1; padding-top: 150px; padding-bottom: 100px;">
+            <div class="intro-glass-card fade-in-up">
+                <span class="category-tag">Testimonials</span>
+                <h1 class="gradient-text" style="font-size: 3.5rem; margin-top: 10px;">Client Reviews</h1>
+                <p style="max-width: 600px; margin: 20px auto;">Stories of success and satisfaction from brands I've
+                    worked with.</p>
+            </div>
+
+            <div class="reviews-grid">
+                <!-- Example Review with Screenshot/Image -->
+                <div class="review-card fade-in-up">
+                    <div class="star-rating">★★★★★</div>
+                    <p class="review-text">"Poorna's work on our signage was transformative. Minimalist yet powerful.
+                        Exactly what we needed for the shop."</p>
+                    <div>
+                        <span class="client-name">Udith Lakshitha</span>
+                        <span class="client-info">Shop Owner, Urban Flow</span>
+                    </div>
+                </div>
+
+                <div class="review-card fade-in-up">
+                    <div class="star-rating">★★★★★</div>
+                    <p class="review-text">"He did several amazing designs for me. Thank you so much, the work is
+                        absolutely top-notch!"</p>
+                    <div>
+                        <span class="client-name">Ashen Dananjaya</span>
+                        <span class="client-info">Manager, Bata</span>
+                    </div>
+                </div>
+
+                <!-- Text-only reviews -->
+                <div class="review-card fade-in-up" style="transition-delay: 0.1s;">
+                    <div class="star-rating">★★★★★</div>
+                    <p class="review-text">"The jersey designs received so much praise at our event. The print quality
+                        and the aesthetic are unmatched. Highly recommend!"</p>
+                    <div>
+                        <span class="client-name">Janitha Lakran</span>
+                        <span class="client-info">Event Director, Velocity Sports</span>
+                    </div>
+                </div>
+
+                <div class="review-card fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="star-rating">★★★★★</div>
+                    <p class="review-text">"Fast, professional, and incredibly talented. Poorna understood our brand
+                        vision from day one and delivered beyond expectations."</p>
+                    <div>
+                        <span class="client-name">Ravindu Devinda</span>
+                        <span class="client-info">CEO, TechCore Solutions</span>
+                    </div>
+                </div>
+
+                <div class="review-card fade-in-up" style="transition-delay: 0.3s;">
+                    <div class="star-rating">★★★★★</div>
+                    <p class="review-text">"Exceptional eye for detail. The social media posts he designed for our
+                        product launch saw a 40% increase in engagement. Truly a master of visual storytelling."</p>
+                    <div>
+                        <span class="client-name">Chethiya Madushan</span>
+                        <span class="client-info">Marketing Lead, Aura Beauty</span>
+                    </div>
+                </div>
+
+                <div class="review-card fade-in-up" style="transition-delay: 0.4s;">
+                    <div class="star-rating">★★★★★</div>
+                    <p class="review-text">"Requested a logo redesign for my startup and I was blown away. The process
+                        was smooth and the final result felt clean, modern, and high-end."</p>
+                    <div>
+                        <span class="client-name">Mark Thompson</span>
+                        <span class="client-info">Founder, Zenith Tech</span>
+                    </div>
+                </div>
+
+                <div class="review-card fade-in-up" style="transition-delay: 0.5s;">
+                    <div class="star-rating">★★★★★</div>
+                    <p class="review-text">"His signage designs for our new cafe are perfect. They perfectly capture the
+                        cozy yet modern vibe we were going for. Best designer I've worked with."</p>
+                    <div>
+                        <span class="client-name">Jessica Wu</span>
+                        <span class="client-info">Owner, Bean & Bloom Cafe</span>
+                    </div>
+                </div>
+
+                <div class="review-card fade-in-up" style="transition-delay: 0.6s;">
+                    <div class="star-rating">★★★★★</div>
+                    <p class="review-text">"Reliable, creative, and local. It was a pleasure working with Poorna on our
+                        corporate branding package. Incredible turnaround time."</p>
+                    <div>
+                        <span class="client-name">Chaminda Perera</span>
+                        <span class="client-info">HR Manager, LND Holdings</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer style="position: relative; z-index: 1;">
+            <div class="container">
+                <div class="social-links" style="justify-content: center; margin-bottom: 30px;">
+                    <a href="https://www.pinterest.com/GIMOZZ/" target="_blank" class="social-icon" title="Pinterest"><i
+                            class="fab fa-pinterest"></i></a>
+                    <a href="https://www.linkedin.com/in/poorna-gimshan/" target="_blank" class="social-icon"
+                        title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/poornagimshan/" target="_blank" class="social-icon"
+                        title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://drive.google.com/drive/folders/1KXfUHUSpjxfxFskPeTsWwNonsfsx2a0K?usp=drive_link"
+                        target="_blank" class="social-icon" title="Google Drive"><i class="fab fa-google-drive"></i></a>
+                </div>
+                <p>&copy; 2024 Saint Mercy. Crafted by Poorna Gimshan.</p>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Project Details | Saint Mercy</title>
+    <style>
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .project-slider {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            overflow: hidden;
+            border-radius: 20px;
+            border: var(--glass-border);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-images-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+            width: 100%;
+        }
+
+        .project-main-image {
+            min-width: 100%;
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+            display: block;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            opacity: 0.7;
+        }
+
+        .slider-btn:hover {
+            opacity: 1;
+            background: var(--primary-color);
+            color: black;
+        }
+
+        .prev-btn {
+            left: 20px;
+        }
+
+        .next-btn {
+            right: 20px;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: -20px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--primary-color);
+            transform: scale(1.2);
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .whatsapp-container {
+            margin-top: 20px;
+            margin-bottom: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header>
+            <div class="container nav-container">
+                <nav>
+                    <a href="index.html" class="logo gradient-text">Saint Mercy</a>
+                    <ul class="nav-links">
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#portfolio">Work</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="reviews.html">Reviews</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="hero-bg" style="height: 100vh; position: fixed; width: 100%; top: 0; left: 0;">
+            <div class="grain-overlay"></div>
+            <div class="hero-blob blob-1"></div>
+            <div class="hero-blob blob-2"></div>
+            <div class="hero-blob blob-3"></div>
+            <div class="hero-blob blob-4"></div>
+        </div>
+
+        <main class="container" style="position: relative; z-index: 1; padding-top: 150px; text-align: center;">
+            <a href="index.html#portfolio" class="back-link"
+                style="display: block; width: fit-content; margin: 0 auto 30px;">
+                <span>←</span> Back to Portfolio
+            </a>
+
+            <h1 id="project-title" class="gradient-text" style="margin-bottom: 40px; font-size: 3rem;">Project Title
+            </h1>
+
+            <div class="project-slider">
+                <button class="slider-btn prev-btn" id="prevBtn">❮</button>
+                <div class="project-images-track" id="project-track">
+                    <img id="project-image" src="" alt="Project Image" class="project-main-image">
+                </div>
+                <button class="slider-btn next-btn" id="nextBtn">❯</button>
+            </div>
+
+            <div class="slider-dots" id="sliderDots"></div>
+
+            <div class="whatsapp-container">
+                <a id="whatsapp-btn" href="#" target="_blank" class="btn btn-primary"
+                    style="padding: 20px 50px; font-size: 1.2rem; display: inline-flex; align-items: center; gap: 15px;">
+                    <span style="font-size: 1.5rem;">💬</span> Inquire Similar Work
+                </a>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer style="position: relative; z-index: 1;">
+            <div class="container">
+                <div class="social-links" style="justify-content: center; margin-bottom: 30px;">
+                    <a href="https://www.pinterest.com/GIMOZZ/" target="_blank" class="social-icon" title="Pinterest"><i
+                            class="fab fa-pinterest"></i></a>
+                    <a href="https://www.linkedin.com/in/poorna-gimshan/" target="_blank" class="social-icon"
+                        title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/poornagimshan/" target="_blank" class="social-icon"
+                        title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://drive.google.com/drive/folders/1KXfUHUSpjxfxFskPeTsWwNonsfsx2a0K?usp=drive_link"
+                        target="_blank" class="social-icon" title="Google Drive"><i class="fab fa-google-drive"></i></a>
+                </div>
+                <p>&copy; 2024 Saint Mercy. Crafted by Poorna Gimshan.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script type="module">
+        const projects = {
+            'redbull': {
+                title: 'Signage Designing',
+                images: [
+                    './images/signage-1.png',
+                    './images/signage-2.png',
+                    './images/signage-3.png',
+                    './images/signage-4.png',
+                    './images/signage-5.png',
+                    './images/signage-6.png',
+                    './images/signage-7.png'
+                ]
+            },
+            'realmadrid-nfl': {
+                title: 'Social Media Post Design',
+                images: [
+                    './images/s1.png',
+                    './images/s2.png',
+                    './images/s3.png',
+                    './images/s4.png',
+                    './images/s5.png',
+                    './images/s6.png',
+                    './images/s7.png'
+                ]
+            },
+            'brooklyn': {
+                title: 'Jersey Design',
+                images: [
+                    './images/10.png', './images/14.jpg', './images/1.png', './images/2.png',
+                    './images/3.png', './images/4.png', './images/5.png', './images/6.png',
+                    './images/7.png', './images/8.png', './images/9.png', './images/11.png',
+                    './images/12.png', './images/13.png'
+                ]
+            },
+            'california': {
+                title: 'Mockup Design',
+                images: [
+                    './images/california-packers.png',
+                    './images/california-packers 2.png',
+                    './images/california-packers 3.png'
+                ]
+            },
+            'lifestyle': {
+                title: 'Logo Design',
+                images: [
+                    './images/L6.jpg', './images/L7.jpg', './images/L8.jpg', './images/L9.jpg',
+                    './images/L1.jpg', './images/L2.jpg', './images/L3.jpg', './images/L4.jpg',
+                    './images/L5.jpg'
+                ]
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+        const project = projects[projectId] || projects['redbull'];
+
+        document.getElementById('project-title').textContent = project.title;
+
+        const track = document.getElementById('project-track');
+        const dotsContainer = document.getElementById('sliderDots');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        let currentIndex = 0;
+        let images = [];
+
+        if (project.images && project.images.length > 0) {
+            images = project.images;
+        } else {
+            images = [project.image];
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+        }
+
+        // Initialize slider
+        track.innerHTML = '';
+        images.forEach((imgSrc, index) => {
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = project.title;
+            img.className = 'project-main-image';
+            track.appendChild(img);
+
+            if (images.length > 1) {
+                const dot = document.createElement('div');
+                dot.className = `dot ${index === 0 ? 'active' : ''}`;
+                dot.onclick = () => goToSlide(index);
+                dotsContainer.appendChild(dot);
+            }
+        });
+
+        function updateSlider() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Update dots
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateSlider();
+        }
+
+        nextBtn.onclick = () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateSlider();
+        };
+
+        prevBtn.onclick = () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateSlider();
+        };
+
+        // WhatsApp Integration
+        const phoneNumber = "94766835672";
+        const message = encodeURIComponent(`Hello Saint Mercy! I'm interested in your project: ${project.title}. Can we discuss a similar design?`);
+        document.getElementById('whatsapp-btn').href = `https://wa.me/${phoneNumber}?text=${message}`;
+
+        document.title = `${project.title} | Saint Mercy`;
+    </script>
+    <script type="module" src="./src/main.js"></script>
+</body>
+
+</html>
